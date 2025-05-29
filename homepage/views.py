@@ -14,23 +14,29 @@ from god.models import God
 
 from blog.models import Blog
 
+from pooja.models import PoojaCategory, Pooja
+
 
 # Create your views here.
 def homepage(request):
-    darshan = DailyDarshan.objects.last()
+    daily_darshan = DailyDarshan.objects.last()
     seva = Seva.objects.all()
     owner = Owner.objects.all()
     service = Service.objects.all()
     bank = BankDetail.objects.all()
     god = God.objects.all()
     blog = Blog.objects.all()[:5]
+    pooja_category = PoojaCategory.objects.all()
+    pooja = Pooja.objects.all()
     context = {
-        'darshan': darshan.img.url,
+        'daily_darshan': daily_darshan.img.url,
         'seva': seva,
         'owner': owner,
         'service': service,
         'bank': bank,
         'god': god,
         'blog': blog,
+        'pooja_category': pooja_category,
+        'pooja': pooja,
     }
     return render(request, 'index.html', context)
