@@ -20,6 +20,10 @@ from pooja.models import PoojaCategory, Pooja
 # Create your views here.
 def homepage(request):
     daily_darshan = DailyDarshan.objects.last()
+    if daily_darshan.img:
+        daily_darshan = daily_darshan.img.url
+    else:
+        daily_darshan = ''
     seva = Seva.objects.all()
     owner = Owner.objects.all()
     service = Service.objects.all()
@@ -29,7 +33,7 @@ def homepage(request):
     pooja_category = PoojaCategory.objects.all()
     pooja = Pooja.objects.all()
     context = {
-        'daily_darshan': daily_darshan.img.url,
+        'daily_darshan': daily_darshan,
         'seva': seva,
         'owner': owner,
         'service': service,
