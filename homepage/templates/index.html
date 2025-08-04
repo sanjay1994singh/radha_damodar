@@ -196,11 +196,11 @@
         <div class="row">
             {% for i in owner %}
             <!-- Article Start -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <article class="sigma_post">
                     <div class="sigma_post-thumb">
                         <a href="blog-details.html">
-                            <img src="{% if i.img %} {{i.img.url}} {% endif %}" alt="post" height="100px">
+                            <img src="{% if i.img %} {{i.img.url}} {% endif %}" alt="post" class="img-fluid">
                         </a>
                     </div>
                     <div class="sigma_post-body">
