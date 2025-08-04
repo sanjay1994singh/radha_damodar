@@ -4521,7 +4521,7 @@ table img {
     justify-content: center;
 }
 .header-absolute + .sigma_subheader .sigma_subheader-inner{
-  padding: 270px 0 150px;
+  padding: 34px 0 150px;
 }
 .header-absolute + .sigma_subheader.subheader-lg .sigma_subheader-inner{
   padding: 230px 0 340px;
