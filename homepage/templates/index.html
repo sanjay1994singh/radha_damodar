@@ -75,6 +75,52 @@
 </section>
 <!-- About End -->
 
+<!-- Donation Start -->
+<div class="section section-padding pt-0">
+    <div class="container">
+        <div class="section-title text-center">
+            <p class="subtitle">Make a Donation</p>
+            <h4 class="title">Donate Us To Help</h4>
+        </div>
+
+        <div class="row">
+            {% for i in service %}
+            <div class="col-lg-4 col-md-6">
+                <div class="sigma_service style-2">
+                    <div class="sigma_service-thumb">
+                        <img src="{% if i.img %} {{i.img.url}} {% endif %}" alt="img" height="10">
+                    </div>
+                    <div class="sigma_service-body">
+                        <h5>
+                            <a href="donation.html">{{i.name_hindi}}</a>
+                        </h5>
+                        <p>{{i.desc}} </p>
+                        <div class="sigma_service-progress">
+                            <div class="progress-content">
+                                <!--                  <p>Raised: $52,384</p>-->
+                                <!--                  <p>Goal: $85,000</p>-->
+                            </div>
+                            <div class="sigma_progress">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="84" aria-valuemin="0"
+                                         aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://pages.razorpay.com/pl_NsGKvs5boNQIMn/view" class="sigma_btn-custom">
+                            Donate
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+<!-- Donation End -->
+
 <!-- holi Start -->
 <div class="section section-padding pattern-squares dark-bg-2">
     <div class="container">
@@ -137,54 +183,6 @@
     </div>
 </div>
 <!-- holi End -->
-
-
-<!-- Donation Start -->
-<div class="section section-padding pt-0">
-    <div class="container">
-        <div class="section-title text-center">
-            <p class="subtitle">Make a Donation</p>
-            <h4 class="title">Donate Us To Help</h4>
-        </div>
-
-        <div class="row">
-            {% for i in service %}
-            <div class="col-lg-4 col-md-6">
-                <div class="sigma_service style-2">
-                    <div class="sigma_service-thumb">
-                        <img src="{% if i.img %} {{i.img.url}} {% endif %}" alt="img" height="10">
-                    </div>
-                    <div class="sigma_service-body">
-                        <h5>
-                            <a href="donation.html">{{i.name_hindi}}</a>
-                        </h5>
-                        <p>{{i.desc}} </p>
-                        <div class="sigma_service-progress">
-                            <div class="progress-content">
-                                <!--                  <p>Raised: $52,384</p>-->
-                                <!--                  <p>Goal: $85,000</p>-->
-                            </div>
-                            <div class="sigma_progress">
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="84" aria-valuemin="0"
-                                         aria-valuemax="100">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="https://pages.razorpay.com/pl_NsGKvs5boNQIMn/view" class="sigma_btn-custom">
-                            Donate
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
-    </div>
-</div>
-<!-- Donation End -->
-
 
 <!-- Owner Start -->
 <div class="section section-padding">
