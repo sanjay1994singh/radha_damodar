@@ -4514,14 +4514,14 @@ table img {
 }
 
 .sigma_subheader-inner {
-    padding: 60px 0;
+    padding: 18px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .header-absolute + .sigma_subheader .sigma_subheader-inner{
-  padding: 34px 0 150px;
+  padding: 2px 0 150px;
 }
 .header-absolute + .sigma_subheader.subheader-lg .sigma_subheader-inner{
   padding: 230px 0 340px;
