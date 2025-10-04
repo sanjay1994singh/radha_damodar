@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ god.name_english }}{% endblock title %}
+
+{% block content %}
+<div class="container god-section">
+
+    <h2>{{ god.name_english }}</h2>
+
+    {% if god.img %}
+    <div class="image-container text-center mb-4">
+        <img src="{{ god.img.url }}" alt="{{ god.name_english }}"
+             style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+    </div>
+    {% endif %}
+
+    {% if god.desc %}
+    {% for paragraph in paragraphs %}
+    <p>{{ paragraph }}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if god.video %}
+    <div class="video-container text-center mt-4">
+        <video width="100%" controls>
+            <source src="{{ god.video.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock content %}

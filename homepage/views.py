@@ -15,6 +15,7 @@ from god.models import God
 from blog.models import Blog
 
 from pooja.models import PoojaCategory, Pooja
+from django.shortcuts import render, get_object_or_404
 
 
 # Create your views here.
@@ -60,3 +61,13 @@ def biographies(request):
 
 def gaushala(request):
     return render(request, 'gaushala.html')
+
+
+def deities(request, id):
+    god = get_object_or_404(God, id=id)
+    paragraphs = god.desc.split('\n\n') if god.desc else []
+    context = {
+        'god': god,
+        'paragraphs': paragraphs
+    }
+    return render(request, 'deities.html', context)
