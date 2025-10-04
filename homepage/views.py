@@ -44,3 +44,19 @@ def homepage(request):
         'pooja': pooja,
     }
     return render(request, 'index.html', context)
+
+
+def history(request):
+    return render(request, 'history.html')
+
+
+def samadhis(request):
+    return render(request, 'samadhis.html')
+
+
+def biographies(request):
+    return render(request, 'biographies.html')
+
+
+def gaushala(request):
+    return render(request, 'gaushala.html')
