@@ -60,14 +60,18 @@ def patrika(request):
         latest_pdf = Patrika.objects.filter(
             uploaded_at__date=selected_date
         ).first()
+        patrika = Patrika.objects.get(id=latest_pdf.id)
+        print(latest_pdf.id, '=========================1')
         absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
     else:
         latest_pdf = Patrika.objects.last()
+        patrika = Patrika.objects.get(id=latest_pdf.id)
+        print(latest_pdf.id, '=========================2')
         absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
 
     context = {
         'pdf': latest_pdf,
-        'patrika': latest_pdf,
+        'patrika': patrika,
         'absolute_image_url': absolute_image_url,
     }
     return render(request, 'patrika.html', context)
