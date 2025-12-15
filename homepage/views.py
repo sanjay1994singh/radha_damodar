@@ -17,11 +17,13 @@ from blog.models import Blog
 from pooja.models import PoojaCategory, Pooja
 from django.shortcuts import render, get_object_or_404
 
+from patrika.models import Patrika
+
 
 # Create your views here.
 def homepage(request):
     daily_darshan = DailyDarshan.objects.last()
-    if daily_darshan.img:
+    if daily_darshan:
         daily_darshan = daily_darshan.img.url
     else:
         daily_darshan = ''
@@ -49,6 +51,26 @@ def homepage(request):
 
 def history(request):
     return render(request, 'history.html')
+
+
+def patrika(request):
+    selected_date = request.GET.get("date")
+
+    if selected_date:
+        latest_pdf = Patrika.objects.filter(
+            uploaded_at__date=selected_date
+        ).first()
+        absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
+    else:
+        latest_pdf = Patrika.objects.last()
+        absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
+
+    context = {
+        'pdf': latest_pdf,
+        'patrika': latest_pdf,
+        'absolute_image_url': absolute_image_url,
+    }
+    return render(request, 'patrika.html', context)
 
 
 def samadhis(request):
