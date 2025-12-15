@@ -61,11 +61,11 @@ def patrika(request):
             uploaded_at__date=selected_date
         ).first()
         patrika = Patrika.objects.get(id=latest_pdf.id)
-        absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
+        absolute_image_url = request.build_absolute_uri(patrika.featured_image.url)
     else:
         latest_pdf = Patrika.objects.last()
         patrika = Patrika.objects.get(id=latest_pdf.id)
-        absolute_image_url = request.build_absolute_uri(latest_pdf.featured_image.url)
+        absolute_image_url = request.build_absolute_uri(patrika.featured_image.url)
     context = {
         'pdf': latest_pdf,
         'patrika': patrika,
